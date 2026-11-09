@@ -217,7 +217,7 @@ export default function Forecast() {
           </div>
         )}
 
-        <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_320px]">
           <div className="min-w-0 space-y-6">
             {/* Stats */}
             <div className="grid grid-cols-2 gap-4 xl:grid-cols-4">
@@ -357,7 +357,7 @@ export default function Forecast() {
             {/* Explain the day */}
             {sel && <ExplainDay r={sel} capacity={settings.capacityKw} tilt={tilt} tariff={settings.tariffRs} bos={settings.bosEfficiency} />}
 
-            <div className="grid gap-6 xl:grid-cols-2">
+            <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
               {/* Load shifting */}
               {best && worst && (
                 <Card>
@@ -475,7 +475,7 @@ function ExplainDay({ r, capacity, tilt, tariff, bos }: { r: DayResult & { isPas
           <Radio className="h-3.5 w-3.5" aria-hidden /> {weatherLabel(r.code)}
         </span>
       </div>
-      <ol className="grid gap-7 p-6 md:grid-cols-2">
+      <ol className="grid grid-cols-1 gap-7 p-6 md:grid-cols-2">
         <Step n={1} title="Read the weather forecast">
           Cloud cover {w.cloudMean}% (range {w.cloudMin}–{w.cloudMax}%), humidity {w.rh}%, rain {fmt(w.precip, 1)} mm over {fmt(w.precipHours, 0)} h, temperature{' '}
           {fmt(w.tmin, 1)}–{fmt(w.tmax, 1)} °C.

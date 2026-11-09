@@ -31,7 +31,7 @@ export default function GreenhouseSim() {
       <CardTitle sub="A zero-dimensional energy-balance model: incoming sunlight must equal the heat Earth radiates back to space. More CO₂ traps more outgoing infrared, so the surface must warm until the balance is restored.">
         Greenhouse effect simulator
       </CardTitle>
-      <div className="grid gap-8 lg:grid-cols-[1.35fr_1fr]">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.35fr_1fr]">
         <div className="overflow-hidden rounded-2xl bg-surface-3/60">
           <svg viewBox="0 0 640 400" className="h-auto w-full" role="img" aria-label={`Diagram: CO2 ${ppm} ppm, surface ${fmt(b.surfaceC, 1)} degrees Celsius`}>
             <defs>

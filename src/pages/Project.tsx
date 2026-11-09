@@ -176,7 +176,7 @@ export default function Project() {
       />
 
       <Container className="space-y-12 py-10">
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           <Card className="lg:col-span-2">
             <CardTitle>
               <span className="inline-flex items-center gap-2">
@@ -234,7 +234,7 @@ export default function Project() {
           <SectionTitle eyebrow="Syllabus coverage" title="Units I–V in one working model" />
           <div className="overflow-hidden rounded-2xl border border-line bg-surface-2">
             {SYLLABUS.map((s, i) => (
-              <div key={s.unit} className={cx('grid gap-3 p-5 md:grid-cols-[140px_1fr_1.4fr_auto] md:items-center', i > 0 && 'border-t border-line')}>
+              <div key={s.unit} className={cx('grid grid-cols-1 gap-3 p-5 md:grid-cols-[140px_1fr_1.4fr_auto] md:items-center', i > 0 && 'border-t border-line')}>
                 <div>
                   <div className="font-display text-lg font-bold text-acc">{s.unit}</div>
                   <div className="text-xs font-medium text-ink-2">{s.title}</div>
@@ -251,7 +251,7 @@ export default function Project() {
 
         <section>
           <SectionTitle eyebrow="Course outcomes" title="CO mapping" />
-          <div className="grid gap-4 md:grid-cols-5">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-5">
             {COS.map((c) => (
               <div key={c.co} className="card p-4">
                 <div className="font-display text-2xl font-bold text-ink">{c.co}</div>
@@ -298,7 +298,7 @@ export default function Project() {
           </div>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-3">
+        <section className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           <Card>
             <CardTitle>
               <span className="inline-flex items-center gap-2">
@@ -340,7 +340,7 @@ export default function Project() {
           </Card>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-2">
+        <section className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           <Card>
             <CardTitle sub="A 5-minute script for the working demonstration">
               <span className="inline-flex items-center gap-2">

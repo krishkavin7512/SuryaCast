@@ -141,7 +141,7 @@ export default function Performance() {
           <p className="mt-3 font-mono text-[11px] text-muted">n = {fmt0(mlp.metrics[split].n)} days · climatology has 0% skill by definition</p>
         </Card>
 
-        <div className="grid gap-6 xl:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
           {/* Significance */}
           <Card>
             <CardTitle sub="1,000 bootstrap resamples of the 14,608 unseen-city days. Bars show the 95% confidence interval of R²; the dot is the measured value.">
@@ -211,7 +211,7 @@ export default function Performance() {
           </Card>
         </div>
 
-        <div className="grid gap-6 xl:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
           {/* Sky */}
           <Card>
             <CardTitle sub="Mean absolute error grouped by the day's mean cloud cover (all unseen data: 2025 + 8 unseen cities).">
@@ -278,7 +278,7 @@ export default function Performance() {
           </Card>
         </div>
 
-        <div className="grid gap-6 xl:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
           {/* Seasons */}
           <Card>
             <CardTitle sub="All unseen data, split by Indian season">Performance through the Indian year</CardTitle>
@@ -336,7 +336,7 @@ export default function Performance() {
         </div>
 
         {/* Robustness + model card */}
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           <Card>
             <CardTitle>
               <span className="inline-flex items-center gap-2">
@@ -405,7 +405,7 @@ export default function Performance() {
         {/* Findings */}
         <Card>
           <CardTitle sub="What the analysis shows, in plain words">Key findings</CardTitle>
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <ul className="space-y-3 text-sm leading-relaxed text-ink-2">
               {[
                 `Generalises to new places: R² ${fmt(mlp.metrics.testSpace.r2, 2)} on 8 cities never used in training, and ${fmt(mlp.metrics.testTime.r2, 2)} on a future year.`,

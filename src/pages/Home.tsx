@@ -25,7 +25,7 @@ export default function Home() {
       {/* HERO */}
       <section className="relative flex min-h-[100svh] items-center overflow-hidden pb-12 pt-24">
         <Container className="relative">
-          <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_.95fr]">
+          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.05fr_.95fr]">
             <div>
               <Eyebrow>Global warming & climate change · working model</Eyebrow>
               <SplitText as="h1" className="h-hero" text="Forecast the sun." accent="Cut the carbon." base={1450} />
@@ -92,7 +92,7 @@ export default function Home() {
             Rooftop solar is the most direct climate action a household can take. But clouds and the monsoon make its output swing from day to
             day, and that uncertainty slows adoption by homes and by the grid.
           </SectionTitle>
-          <div className="grid gap-3 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
             {[
               { icon: <Factory className="h-5 w-5" />, k: '0.727', u: 'kg CO₂ / unit', t: 'Every unit of grid power', d: "The weighted-average emission factor of India's grid (CEA, FY 2023-24). A typical home uses 2,000–3,000 units a year." },
               { icon: <CloudRain className="h-5 w-5" />, k: '−70%', u: 'on a monsoon day', t: 'Sunlight swings with weather', d: 'Monsoon cloud can cut a day\'s output by 70%, and heat waves lower panel efficiency. One average figure misleads.' },
@@ -118,7 +118,7 @@ export default function Home() {
       <section className="border-t border-line py-[clamp(72px,10vw,130px)]">
         <Container>
           <SectionTitle eyebrow="02 · How it works" title="Weather in, carbon out." em="Machine learning in the middle." />
-          <div className="relative grid gap-3 md:grid-cols-4">
+          <div className="relative grid grid-cols-1 gap-3 md:grid-cols-4">
             {[
               { icon: <CloudSun className="h-5 w-5" />, t: 'Live weather', d: '7-day cloud, humidity, rain and temperature for any spot in India (Open-Meteo).' },
               { icon: <Brain className="h-5 w-5" />, t: 'Neural network', d: 'Five 13→64→32→1 networks, written from scratch, predict how clear the sky will be.' },
@@ -140,7 +140,7 @@ export default function Home() {
 
       {/* 03 LIVE */}
       <section className="border-t border-line py-[clamp(72px,10vw,130px)]">
-        <Container className="grid items-center gap-12 lg:grid-cols-[.9fr_1.1fr]">
+        <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[.9fr_1.1fr]">
           <div>
             <Eyebrow>03 · Running right now</Eyebrow>
             <h2 className="h2" data-reveal="">
@@ -186,7 +186,7 @@ export default function Home() {
       <section className="border-t border-line py-[clamp(72px,10vw,130px)]">
         <Container>
           <SectionTitle eyebrow="05 · Explore" title="Six rooms." em="One working model." />
-          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
             {[
               { to: '/forecast', t: 'Live Forecast', d: '7-day rooftop kWh anywhere in India, with uncertainty and an 8-step explanation.' },
               { to: '/planner', t: 'Impact Planner', d: 'A real year: CO₂, carbon credits, PM Surya Ghar subsidy, payback, LCA.' },

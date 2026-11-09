@@ -22,7 +22,7 @@ function PageFallback() {
     <div className="mx-auto max-w-7xl px-6 pb-16 pt-36">
       <div className="skeleton mb-6 h-10 w-72" />
       <div className="skeleton mb-3 h-5 w-[32rem] max-w-full" />
-      <div className="mt-10 grid gap-4 md:grid-cols-3">
+      <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
         <div className="skeleton h-36" />
         <div className="skeleton h-36" />
         <div className="skeleton h-36" />

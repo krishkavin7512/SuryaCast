@@ -131,7 +131,7 @@ export default function SunRings({ cityId = 'chennai', cityName = 'Chennai' }: {
       const cy = H / 2 + tiltX * 30;
       const R0 = S * 0.13;
       const inner = R0 * 1.55;
-      const outer = S * 0.45;
+      const outer = S * 0.5 - 32; // leave room for the month labels
       const gap = (outer - inner) / 4;
       const squash = 1 - Math.abs(tiltX) * 0.25;
 

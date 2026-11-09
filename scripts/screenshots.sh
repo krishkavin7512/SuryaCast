@@ -24,3 +24,5 @@ shot model_lab 1440,6000 "/model?capture"
 shot performance 1440,4600 "/performance?capture"
 shot science 1440,3400 "/science?capture"
 shot project 1440,4200 "/project?capture"
+
+python scripts/crop_screenshots.py

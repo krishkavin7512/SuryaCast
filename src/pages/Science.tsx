@@ -66,7 +66,7 @@ export default function Science() {
       <Container className="space-y-6 py-10">
         <GreenhouseSim />
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {[
             { icon: <Atom className="h-5 w-5" />, k: `${fmt(latestCo2[1], 1)} ppm`, l: `CO₂ in ${latestCo2[0]} (Mauna Loa)`, s: `up from ${fmt(firstCo2[1], 1)} ppm in ${firstCo2[0]} and ~280 ppm before industry` },
             { icon: <Flame className="h-5 w-5" />, k: `+${fmt(latestT[1], 2)} °C`, l: `Global temperature, ${latestT[0]}`, s: `vs 1951–80 average (NASA GISTEMP). Warmest years: ${warmest.map((w) => w[0]).join(', ')}` },
@@ -81,7 +81,7 @@ export default function Science() {
           ))}
         </div>
 
-        <div className="grid gap-6 xl:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
           <Card>
             <CardTitle sub="Monthly CO₂ at Mauna Loa Observatory since 1958. The yearly zig-zag is the Northern Hemisphere's forests breathing: the carbon cycle in action.">
               The Keeling curve
@@ -126,7 +126,7 @@ export default function Science() {
           </Card>
         </div>
 
-        <div className="grid gap-6 xl:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
           <Card>
             <CardTitle sub={`Each dot is one year (${C.co2Temp.points[0].year}–${C.co2Temp.points[C.co2Temp.points.length - 1].year}). Warming rises with the logarithm of CO₂, as greenhouse physics predicts.`}>
               CO₂ vs temperature: our regression
@@ -185,7 +185,7 @@ export default function Science() {
               <Waves className="h-5 w-5 text-acc" aria-hidden /> The heat-wave paradox
             </span>
           </CardTitle>
-          <div className="grid gap-8 md:grid-cols-[1fr_1.2fr] md:items-center">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-[1fr_1.2fr] md:items-center">
             <div className="space-y-4">
               <Slider label="Afternoon air temperature" value={amb} min={20} max={48} onChange={setAmb} display={`${amb} °C`} hint="Same sunshine (6.1 kWh/m²), only the air temperature changes. IMD declares a heat wave when plains reach 40 °C or more and run well above normal." />
               <div className="grid grid-cols-3 gap-3 text-center">
@@ -217,7 +217,7 @@ export default function Science() {
 
         <Card>
           <CardTitle sub="How the pieces of this project connect">From the syllabus to the rooftop</CardTitle>
-          <div className="grid gap-4 md:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
             {[
               ['1 · Cause', 'Coal power plants supply most of India\'s electricity and emit 0.727 kg CO₂ per unit on average (CEA).'],
               ['2 · Mechanism', 'CO₂ absorbs outgoing infrared: +3.7 W/m² per doubling. Earth warms until it radiates the extra heat away.'],

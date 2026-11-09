@@ -125,7 +125,7 @@ export default function Planner() {
             <Note tone="warn">Couldn't load climate history for this place ({err}). Pick one of the 38 bundled cities to work offline.</Note>
           </div>
         )}
-        <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_320px]">
           <div className="min-w-0 space-y-6">
             {!sim ? (
               <div className="flex h-64 items-center justify-center gap-3 text-ink-2">
@@ -197,7 +197,7 @@ export default function Planner() {
                 {/* Sizing */}
                 <Card>
                   <CardTitle sub="Size the system to your electricity bill">Right-size your system</CardTitle>
-                  <div className="grid gap-6 md:grid-cols-[1fr_1.2fr] md:items-center">
+                  <div className="grid grid-cols-1 gap-6 md:grid-cols-[1fr_1.2fr] md:items-center">
                     <NumberField label="Your monthly electricity use" value={consumption} min={0} step={10} suffix="units (kWh) / month" onChange={setConsumption} />
                     <div className="rounded-2xl bg-surface-2 p-4 text-sm leading-relaxed text-ink-2">
                       To cover <strong>{fmt0(consumption)} units/month</strong> here you need about{' '}
@@ -209,7 +209,7 @@ export default function Planner() {
                 </Card>
 
                 {/* Carbon credits */}
-                <div className="grid gap-6 xl:grid-cols-2">
+                <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
                   <Card>
                     <CardTitle sub="Kyoto Protocol → Clean Development Mechanism → Paris Article 6.4 → India's Carbon Credit Trading Scheme">
                       Carbon credits earned
@@ -350,7 +350,7 @@ export default function Planner() {
                         display={<span className="text-white">{homesN >= 1e7 ? '1 crore' : homesN >= 1e5 ? `${fmt(homesN / 1e5, 1)} lakh` : fmt0(homesN)}</span>}
                       />
                     </div>
-                    <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
                       <div>
                         <div className="font-display text-3xl font-bold text-gold">{fmt(scaleKwh / 1e9, 2)} TWh</div>
                         <div className="text-xs text-white/60">clean electricity per year</div>
@@ -366,7 +366,7 @@ export default function Planner() {
                     </div>
                     <p className="mt-4 text-xs text-white/50">PM Surya Ghar: Muft Bijli Yojana targets 1 crore households (Feb 2024).</p>
                   </div>
-                  <div className="grid gap-4 p-6 sm:grid-cols-2 lg:grid-cols-4">
+                  <div className="grid grid-cols-1 gap-4 p-6 sm:grid-cols-2 lg:grid-cols-4">
                     {[
                       { icon: <Landmark className="h-5 w-5" />, t: 'Policy & finance', d: 'Subsidy + net-metering approval from the DISCOM; low-interest rooftop loans.' },
                       { icon: <Building2 className="h-5 w-5" />, t: 'Structural safety', d: 'Roof load check (~15–20 kg/m²), wind-rated mounting, shade-free area.' },

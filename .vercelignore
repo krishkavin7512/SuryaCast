@@ -1,5 +1,5 @@
-docs/
-deliverables/
-ml/
-tests/
+/docs/
+/deliverables/
+/ml/
+/tests/
 *.log

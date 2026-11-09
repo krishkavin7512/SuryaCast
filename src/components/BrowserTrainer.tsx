@@ -71,7 +71,7 @@ export default function BrowserTrainer({ onTrained }: { onTrained: (m: BrowserMo
       <CardTitle sub="Train a brand-new network from random weights, live in your browser, using the same from-scratch code and real data. Watch it learn epoch by epoch.">
         Train it yourself
       </CardTitle>
-      <div className="grid gap-8 lg:grid-cols-[300px_1fr]">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[300px_1fr]">
         <div className="space-y-5">
           <div>
             <div className="mb-2 text-sm font-medium text-ink-2">Hidden layers</div>

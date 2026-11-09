@@ -201,7 +201,7 @@ function Footer() {
             </div>
           </div>
         </Link>
-        <div className="mt-10 grid gap-8 text-sm text-muted md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="mt-10 grid grid-cols-1 gap-8 text-sm text-muted md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <Logo />
             <p className="mt-3 max-w-sm leading-relaxed">

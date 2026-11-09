@@ -104,7 +104,7 @@ export default function ModelLab() {
 
       <Container className="space-y-6 py-10">
         {/* Data & design */}
-        <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr]">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_1fr]">
           <Card>
             <CardTitle sub="Orange: 30 training cities. Blue: 8 cities held out completely, to test whether the model works in new places.">
               <span className="inline-flex items-center gap-2">
@@ -180,7 +180,7 @@ export default function ModelLab() {
           >
             Results: our network vs established methods
           </CardTitle>
-          <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.2fr_1fr]">
             <div className="overflow-x-auto rounded-xl border border-line">
               <table className="w-full min-w-[520px] text-sm">
                 <thead className="bg-surface-2 text-left text-xs uppercase tracking-wider text-muted">
@@ -236,7 +236,7 @@ export default function ModelLab() {
         </Card>
 
         {/* Scatter + series */}
-        <div className="grid gap-6 xl:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
           <Card>
             <CardTitle sub="700 random days from the 8 unseen cities. Points on the dashed line are perfect predictions." right={<Segmented label="Method" value={scatterModel} onChange={setScatterModel} options={[{ value: 'mlp', label: 'Neural net' }, { value: 'hargreaves', label: 'Hargreaves' }]} />}>
               Predicted vs actual
@@ -280,7 +280,7 @@ export default function ModelLab() {
         </div>
 
         {/* Monthly + importance */}
-        <div className="grid gap-6 xl:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
           <Card>
             <CardTitle sub="Mean absolute error by month, all unseen data. Monsoon months (Jun–Sep) are hardest for every method, because clouds change hour by hour.">
               When is solar hardest to predict?
@@ -354,7 +354,7 @@ export default function ModelLab() {
         </Card>
 
         {/* Rigor */}
-        <div className="grid gap-6 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
           <Card>
             <CardTitle sub="Five networks, each trained without 6 of the training cities and tested on them">
               <span className="inline-flex items-center gap-2">
@@ -444,7 +444,7 @@ export default function ModelLab() {
         </div>
 
         {/* Training details */}
-        <div className="grid gap-6 xl:grid-cols-[1.4fr_1fr]">
+        <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.4fr_1fr]">
           <Card>
             <CardTitle sub={`Network #1 of the ensemble. ${R.network.optimizer}.`}>Learning curve of the shipped model</CardTitle>
             <div className="mb-2 flex gap-4">
@@ -494,7 +494,7 @@ export default function ModelLab() {
         <Playground browserModel={browserModel} />
         <BrowserTrainer onTrained={setBrowserModel} />
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           <Stat label="Why predict Kt, not radiation?" icon={<Target className="h-4 w-4" />} value="Physics-informed" sub="Ra is exact astronomy; the network learns only the atmosphere's effect, which makes it generalise across latitudes and seasons." />
           <Stat label="Why an ensemble?" accent="violet" icon={<Layers className="h-4 w-4" />} value="5 networks" sub="Each starts from different random weights; averaging cancels their individual quirks and improves accuracy on new cities." />
           <Stat label="Why from scratch?" accent="leaf" icon={<Brain className="h-4 w-4" />} value="0 ML libraries" sub="Forward pass, back-propagation and the Adam optimiser are about 250 lines of TypeScript, verified by gradient-check unit tests." />

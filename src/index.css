@@ -53,6 +53,8 @@
   --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+/* Component styles live in the components layer so Tailwind utilities (hidden, xl:flex, p-*) can override them. */
+@layer components {
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
@@ -895,4 +897,5 @@ details > summary::-webkit-details-marker {
   animation-duration: 0s !important;
   animation-delay: 0s !important;
   transition: none !important;
+}
 }

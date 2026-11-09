@@ -133,7 +133,7 @@ export default function Playground({ browserModel }: { browserModel?: BrowserMod
       >
         What-if playground
       </CardTitle>
-      <div className="grid gap-8 xl:grid-cols-[1fr_1.1fr]">
+      <div className="grid grid-cols-1 gap-8 xl:grid-cols-[1fr_1.1fr]">
         <div className="space-y-5">
           <div>
             <label htmlFor="pg-city" className="mb-1.5 block text-sm font-medium text-ink-2">
@@ -148,12 +148,12 @@ export default function Playground({ browserModel }: { browserModel?: BrowserMod
             </select>
           </div>
           <Slider label="Day of year" value={inp.doy} min={1} max={365} onChange={(v) => set({ doy: v })} display={new Date(`${dateFromDoy(inp.doy)}T00:00:00`).toLocaleDateString('en-IN', { day: 'numeric', month: 'long' })} />
-          <div className="grid gap-5 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
             <Slider label="Mean cloud" value={inp.cloudMean} min={0} max={100} onChange={(v) => set({ cloudMean: v })} display={`${inp.cloudMean}%`} />
             <Slider label="Min cloud" value={inp.cloudMin} min={0} max={100} onChange={(v) => set({ cloudMin: v })} display={`${inp.cloudMin}%`} />
             <Slider label="Max cloud" value={inp.cloudMax} min={0} max={100} onChange={(v) => set({ cloudMax: v })} display={`${inp.cloudMax}%`} />
           </div>
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <Slider label="Max temperature" value={inp.tmax} min={-5} max={48} step={0.5} onChange={(v) => set({ tmax: v })} display={`${inp.tmax} °C`} />
             <Slider label="Min temperature" value={inp.tmin} min={-15} max={35} step={0.5} onChange={(v) => set({ tmin: v })} display={`${inp.tmin} °C`} />
             <Slider label="Relative humidity" value={inp.rh} min={10} max={100} onChange={(v) => set({ rh: v })} display={`${inp.rh}%`} />

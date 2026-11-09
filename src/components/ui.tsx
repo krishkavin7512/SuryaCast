@@ -36,7 +36,7 @@ export function PageHead({
 }) {
   return (
     <section className="relative pb-10 pt-32 sm:pt-36">
-      <Container className={cx('grid gap-10', !!right && 'lg:grid-cols-[1.25fr_1fr] lg:items-end')}>
+      <Container className={cx('grid grid-cols-1 gap-10', !!right && 'lg:grid-cols-[1.25fr_1fr] lg:items-end')}>
         <div>
           <Eyebrow>{eyebrow}</Eyebrow>
           <h1 className="h2 !mb-5 !text-[clamp(36px,4.6vw,68px)]" data-reveal="" style={{ ['--d' as string]: 80 }}>
@@ -56,7 +56,7 @@ export function PageHead({
           )}
         </div>
         {right && (
-          <div data-reveal="" style={{ ['--d' as string]: 220 }} className="relative z-20">
+          <div data-reveal="" style={{ ['--d' as string]: 220 }} className="relative z-20 min-w-0">
             {right}
           </div>
         )}
@@ -67,7 +67,7 @@ export function PageHead({
 
 export function SectionTitle({ eyebrow, title, em, children, units }: { eyebrow?: string; title: ReactNode; em?: string; children?: ReactNode; units?: string[] }) {
   return (
-    <div className="mb-10 grid gap-6 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
+    <div className="mb-10 grid grid-cols-1 gap-6 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
       <div>
         {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
         <h2 className="h2 !mb-0" data-reveal="">
