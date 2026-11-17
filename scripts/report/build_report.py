@@ -36,7 +36,12 @@ TNR = "Times New Roman"
 TITLE = "SuryaCast: Machine-Learning Solar Forecasting and Carbon-Offset Planning for Indian Rooftops"
 COURSE = "21CEO310T"
 COURSE_NAME = "Global Warming and Climate Change"
-MEMBERS = [("KAVIN KRISH VIJAY", "RA2411003011558"), ("TANAY KRISHNAN", "RA2411003011550")]
+MEMBERS = [
+    ("KAVIN KRISH VIJAY", "RA2411003011558"),
+    ("TANAY KRISHNAN", "RA2411003011550"),
+    ("NIYATI AGRAWAL", "RA2411003011569"),
+    ("SHAURYA OJHA", "RA2411003011565"),
+]
 STUDENT_DEPT = "Department of Computing Technologies"
 GUIDE, GUIDE_DESIG, GUIDE_DEPT = "Dr. Arokiaprakash. A", "Assistant Professor", "Department of Civil Engineering"
 LIVE = "https://suryacast.vercel.app"
@@ -346,9 +351,26 @@ def equation(text, num):
 ps = doc.paragraphs
 fill(ps[0], [(TITLE, {"bold": True, "size": 22})])
 fill(ps[1], [(f"{COURSE} – {COURSE_NAME}", {"bold": True, "size": 12}), (" · Working Model Project (LLT / CLA-2)", {"bold": True, "size": 12})])
-fill(ps[3], [(f"{MEMBERS[0][0]} [{MEMBERS[0][1]}]", {"bold": True, "size": 16})])
-fill(ps[4], [(f"{MEMBERS[1][0]} [{MEMBERS[1][1]}]", {"bold": True, "size": 16})])
+import copy
+fill(ps[3], [(f"{MEMBERS[0][0]} [{MEMBERS[0][1]}]", {"bold": True, "size": 14})])
+fill(ps[4], [(f"{MEMBERS[1][0]} [{MEMBERS[1][1]}]", {"bold": True, "size": 14})])
 ps[4].paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
+ps[3].paragraph_format.line_spacing = 1.3
+ps[3].paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
+ps[3].paragraph_format.right_indent = None  # template offsets the first name line; centre it like the others
+ps[4].paragraph_format.line_spacing = 1.3
+# four names plus guide block must still fit the cover page: tighten the spacer and the italic lines
+ps[5].paragraph_format.line_spacing = Pt(8)
+for _i in (7, 8, 9):
+    ps[_i].paragraph_format.line_spacing = 1.3
+for _i in (10, 11, 12):
+    ps[_i].paragraph_format.line_spacing = 1.25
+_prev = ps[4]._p
+for _name, _reg in MEMBERS[2:]:  # further team members: copies of the second name line
+    _new = copy.deepcopy(ps[4]._p)
+    _prev.addnext(_new)
+    fill(docx.text.paragraph.Paragraph(_new, ps[4]._parent), [(f"{_name} [{_reg}]", {"bold": True, "size": 14})])
+    _prev = _new
 fill(ps[7], [(GUIDE, {"bold": True, "size": 14})])
 fill(ps[8], [(GUIDE_DESIG, {"bold": True, "size": 14})])
 fill(ps[9], [(GUIDE_DEPT, {"bold": True, "size": 14})])
@@ -371,10 +393,14 @@ fill(ps[27], [
     (" working model report titled “", {"size": 14}),
     (TITLE, {"bold": True, "size": 14}),
     ("” is the bonafide work of ", {"size": 14}),
-    (f"{MEMBERS[0][0]} ({MEMBERS[0][1]})", {"bold": True, "size": 14}),
-    (" and ", {"size": 14}),
-    (f"{MEMBERS[1][0]} ({MEMBERS[1][1]}),", {"bold": True, "size": 14}),
-    (f" {STUDENT_DEPT}, who undertook the task of completing the project within the allotted time.", {"size": 14}),
+] + [
+    run
+    for i, (n, r) in enumerate(MEMBERS)
+    for run in (
+        [(", " if i < len(MEMBERS) - 1 else " and ", {"size": 14})] if i else []
+    ) + [(f"{n} ({r})", {"bold": True, "size": 14})]
+] + [
+    (f", {STUDENT_DEPT}, who undertook the task of completing the project within the allotted time.", {"size": 14}),
 ])
 sig = doc.tables[0].rows[0].cells[0].paragraphs
 fill(sig[3], [(GUIDE, {"bold": True, "size": 12})])
@@ -538,9 +564,8 @@ table(1, "Project resources", ["Resource", "Link", "Description"], [
     ["Dataset (CSV)", f"{{{{{CSV_URL}|{CSV_URL}}}}}", "69,388 city-days of ERA5 data"],
 ], [2.9, 7.7, 4.0], size=9, bold_first_col=True, align_num=False)
 table(1, "Project team", ["Name", "Register No.", "Department", "Contribution"], [
-    [MEMBERS[0][0], MEMBERS[0][1], STUDENT_DEPT, "Equal joint work on all parts (data, model, web app, analysis, report)"],
-    [MEMBERS[1][0], MEMBERS[1][1], STUDENT_DEPT, "Equal joint work on all parts (data, model, web app, analysis, report)"],
-], [3.3, 3.1, 4.0, 4.2], size=9, align_num=False)
+    [n, r, STUDENT_DEPT, "Equal joint work on all parts"] for n, r in MEMBERS
+], [3.9, 3.3, 3.8, 3.6], size=9, align_num=False)
 h2("1.7 Relevance to the Course and Organization of the Report")
 para(
     "The model uses every unit of the 21CEO310T syllabus: the greenhouse effect and carbon cycle (Unit I); Earth's energy balance and "
@@ -827,7 +852,7 @@ page_numbers(doc.sections[1], "lowerRoman", 2)
 page_numbers(doc.sections[2], "decimal", 1)
 
 doc.core_properties.title = TITLE
-doc.core_properties.author = " and ".join(m[0].title() for m in MEMBERS)
+doc.core_properties.author = ", ".join(m[0].title() for m in MEMBERS)
 doc.core_properties.subject = f"{COURSE} {COURSE_NAME}"
 OUT.parent.mkdir(parents=True, exist_ok=True)
 doc.save(str(OUT))

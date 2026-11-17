@@ -28,7 +28,7 @@ md(f"""
 | | |
 |---|---|
 | Course | 21CEO310T: Global Warming and Climate Change (LLT / CLA-2 working model) |
-| Team | Kavin Krish Vijay (RA2411003011558) · Tanay Krishnan (RA2411003011550) |
+| Team | Kavin Krish Vijay (RA2411003011558) · Tanay Krishnan (RA2411003011550) · Niyati Agrawal (RA2411003011569) · Shaurya Ojha (RA2411003011565) |
 | Live working model | {SITE} |
 | Source code | {REPO} |
 
