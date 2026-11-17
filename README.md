@@ -17,6 +17,7 @@ A neural network written from scratch learns how much sunlight survives the sky 
 <img src="docs/screenshots/hero.jpg" alt="SuryaCast landing page: five years of real daily sunlight drawn as rings around a sun" width="92%">
 
 **Live demo:** [https://suryacast.vercel.app](https://suryacast.vercel.app)<br>
+**Model-training notebook (Google Colab):** [open and run](https://colab.research.google.com/drive/1NzMETRYesyOWit-jYPFeXDj--2XASRk7?usp=sharing) · also in the repo as [`notebooks/SuryaCast_Model_Training.ipynb`](notebooks/SuryaCast_Model_Training.ipynb)<br>
 [The idea](#idea) · [Results](#results) · [The working model](#model) · [How it works](#how) · [Climate science](#science) · [What it cannot claim](#limits) · [Screenshots](#screenshots) · [Run it](#run)
 
 </div>

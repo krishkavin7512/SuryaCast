@@ -40,8 +40,8 @@ printed = lambda i: roman(i + 1) if i < ch1 else str(i - ch1 + 1)
 
 toc = {}
 for num, title in index["toc"]:
-    if title in ("List of Figures", "List of Tables", "List of Abbreviations"):
-        i = first(lambda ln, t=title.upper(): ln == t)
+    if title.startswith("List of Figures"):
+        i = first(lambda ln: ln == "LIST OF FIGURES")
     elif num and "." not in num:
         i = first(lambda ln, n=num: ln.startswith(f"Chapter {n}:"), ch1)
     elif num:
